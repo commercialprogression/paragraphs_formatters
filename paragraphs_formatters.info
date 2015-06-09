@@ -1,0 +1,4 @@
+name = Paragraphs formatters
+description = Additional ways to display paragraphs. Not for the feint of heart.
+core = 7.x
+dependencies[] = paragraphs
