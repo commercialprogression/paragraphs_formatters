@@ -2,3 +2,6 @@ name = Paragraphs formatters
 description = Additional ways to display paragraphs. Not for the feint of heart.
 core = 7.x
 dependencies[] = paragraphs
+
+files[] = paragraphs_formatters.field_formatter.inc
+files[] = paragraphs_formatters.field_widget.inc
