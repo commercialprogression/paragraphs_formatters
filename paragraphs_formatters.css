@@ -1,0 +1,58 @@
+.field-type-paragraphs {}
+  .field-type-paragraphs .even {
+    background: #fff;
+  }
+  .field-type-paragraphs tbody {
+    background-color: #eee;
+  }
+  .field-type-paragraphs tbody tr {
+    background: #fff;
+    position: relative;
+  }
+  .field-type-paragraphs tr.draggable {
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    display: block;
+    margin: 15px;
+  }
+    .field-type-paragraphs tr.draggable:after {
+      content: ' ';
+      display: table;
+      clear: both;
+    }
+    .field-type-paragraphs .drag {
+      background-color: #ccc;
+    }
+    .field-type-paragraphs tr.draggable > td {
+      display: block;
+    }
+    .field-type-paragraphs tr.draggable .field-multiple-drag {
+      padding: 5px;
+    }
+    .field-type-paragraphs tr.draggable .tabledrag-changed {
+      display: none;
+    }
+    .field-type-paragraphs tr.draggable .tabledrag-handle {
+      display: block;
+      float: none;
+      height: 15px;
+      margin: 0 0 0 -.75em;
+    }
+  .field-type-paragraphs .entity-paragraphs-item {
+    background: #f7f7f7;
+    border: 2px solid #ccc;
+    padding: 10px;
+  }
+  .field-type-paragraphs .form-wrapper {
+    max-width: calc(100% - 16em);
+  }
+  .field-type-paragraphs .form-actions {
+    float: right;
+    margin: 0 0 1em;
+    max-width: 15em;
+  }
+    .field-type-paragraphs .form-actions > p {
+      background: #fdc;
+      color: #f50;
+      margin: 0 0 1em;
+      padding: 5px;
+    }

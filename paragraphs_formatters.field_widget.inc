@@ -28,7 +28,14 @@ function paragraphs_formatters_field_widget_form(&$form, &$form_state, $field, $
   switch ($instance['widget']['type']) {
     case 'paragraphs_formatters_embed':
       $form['#entity'] = $element['#entity'];
-      return paragraphs_formatters_field_multiple_value_form($field, $instance, $langcode, $items, $form, $form_state);
+      $return = paragraphs_formatters_field_multiple_value_form($field, $instance, $langcode, $items, $form, $form_state);
+      
+      // Add module CSS to make everything look nice.
+      $return['#attached']['css'] = array(
+        drupal_get_path('module', 'paragraphs_formatters') . '/paragraphs_formatters.css'
+      );
+
+      return $return;
       break;
   }
 }
@@ -38,7 +45,6 @@ function paragraphs_formatters_field_widget_form(&$form, &$form_state, $field, $
  */
 function paragraphs_formatters_field_multiple_value_form($field, $instance, $langcode, $items, &$form, &$form_state) {
   $field_elements = paragraphs_field_multiple_value_form($field, $instance, $langcode, $items, $form, $form_state);
-
   return $field_elements;
 }
 
@@ -47,6 +53,11 @@ function paragraphs_formatters_field_multiple_value_form($field, $instance, $lan
  */
 function paragraphs_formatters_field_widget_form_build(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
   $element = paragraphs_field_widget_form_build($form, $form_state, $field, $instance, $langcode, $items, $delta, $element);
+  
+  // Move the UI elements around.
+  unset($element['paragraph_bundle_title']);
+  $element['actions']['#weight'] = -1;
+  
   return $element;
 }
 
